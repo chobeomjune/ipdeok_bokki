@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>메인 페이지</title>
+
+    <!-- Noto Sans KR -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div id="app">
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <a href="index.html" class="logo">LOGO</a>
+
+        <!-- 햄버거 메뉴 버튼 -->
+        <button
+            type="button"
+            class="hamburger-button"
+            id="menuOpen"
+            aria-label="메뉴 열기"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </header>
+
+
+    <!-- 사이드 메뉴 -->
+    <div class="menu-layer" id="menuLayer" aria-hidden="true">
+
+        <!-- 배경 오버레이 -->
+        <div class="menu-overlay" id="menuOverlay"></div>
+
+        <!-- 슬라이드 메뉴 -->
+        <nav class="side-menu" id="sideMenu" aria-label="전체 메뉴">
+
+            <div class="side-menu-header">
+
+                <span class="side-menu-title">MENU</span>
+
+                <button
+                    type="button"
+                    class="menu-close-button"
+                    id="menuClose"
+                    aria-label="메뉴 닫기"
+                >
+                    &times;
+                </button>
+
+            </div>
+
+            <ul class="side-menu-list">
+
+                <li>
+                    <a href="#" class="side-menu-link">
+                        리스트페이지
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="side-menu-link">
+                        상세페이지
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="side-menu-link">
+                        결제페이지
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="side-menu-link">
+                        결제
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+
+    <!-- HERO -->
+    <section class="hero">
+        <!-- 추후 배경 이미지 적용 -->
+    </section>
+
+
+    <!-- SECTION 1 : ORDER -->
+    <section class="order-section">
+
+        <div class="order-buttons">
+
+            <a href="#" class="order-button order-button-main">
+                배달 주문하기
+            </a>
+
+            <div class="order-button-row">
+
+                <a href="#" class="order-button">
+                    전화 주문
+                </a>
+
+                <a href="#" class="order-button">
+                    쿠폰 사용
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SECTION 2 : RECOMMEND -->
+    <section class="recommend-section">
+
+        <h2 class="section-title">
+            추천 메뉴
+        </h2>
+
+        <div class="hashtag-list">
+
+            <button type="button" class="hashtag active">
+                해시태그
+            </button>
+
+            <button type="button" class="hashtag">
+                해시태그
+            </button>
+
+            <button type="button" class="hashtag">
+                해시태그
+            </button>
+
+        </div>
+
+
+        <!-- 추천 메뉴 카드 -->
+        <div class="recommend-carousel">
+
+            <div class="recommend-card recommend-card-side left">
+            </div>
+
+
+            <div class="recommend-card recommend-card-main">
+
+                <div class="recommend-content">
+
+                    <span class="recommend-label">
+                        BEST 1
+                    </span>
+
+                    <p class="recommend-name">
+                        떡볶이 타이틀 작성
+                    </p>
+
+                    <a href="#" class="recommend-button">
+                        주문하기
+                    </a>
+
+                </div>
+
+                <div class="recommend-image-placeholder"></div>
+
+            </div>
+
+
+            <div class="recommend-card recommend-card-side right">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SECTION 3 : MENU -->
+    <section class="menu-section">
+
+        <h2 class="section-title">
+            메뉴
+        </h2>
+
+        <div class="hashtag-list">
+
+            <button type="button" class="hashtag active">
+                맵메뉴 1
+            </button>
+
+            <button type="button" class="hashtag">
+                맵메뉴 2
+            </button>
+
+            <button type="button" class="hashtag">
+                맵메뉴 3
+            </button>
+
+        </div>
+
+
+        <!-- 메뉴 목록 -->
+        <div class="menu-grid">
+
+            <a href="sub1.html" class="menu-item">
+                <div class="menu-image-placeholder"></div>
+                <p class="menu-item-title">떡볶이 타이틀 작성</p>
+            </a>
+
+            <a href="sub2.html" class="menu-item">
+                <div class="menu-image-placeholder"></div>
+                <p class="menu-item-title">떡볶이 타이틀 작성</p>
+            </a>
+
+            <a href="sub3.html" class="menu-item">
+                <div class="menu-image-placeholder"></div>
+                <p class="menu-item-title">떡볶이 타이틀 작성</p>
+            </a>
+
+            <a href="sub4.html" class="menu-item">
+                <div class="menu-image-placeholder"></div>
+                <p class="menu-item-title">떡볶이 타이틀 작성</p>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SECTION 4 : EVENT -->
+    <section class="event-section">
+
+        <div class="event-heading">
+
+            <h2 class="section-title">
+                이벤트
+            </h2>
+
+            <p class="event-description">
+                매달 추가되는 입덕볶이의 이벤트를 만나보세요!
+            </p>
+
+        </div>
+
+
+        <!-- 이벤트 탭 -->
+        <div class="event-tabs">
+
+            <button type="button" class="event-tab active">
+                진행중
+            </button>
+
+            <button type="button" class="event-tab">
+                종료
+            </button>
+
+            <button type="button" class="event-tab">
+                당첨자
+            </button>
+
+        </div>
+
+
+        <!-- 이벤트 콘텐츠 -->
+        <div class="event-list">
+
+            <a href="#" class="event-card">
+
+                <div class="event-image-placeholder"></div>
+
+                <div class="event-content">
+
+                    <p class="event-subtitle">
+                        [할인중 이벤트]
+                    </p>
+
+                    <h3 class="event-title">
+                        매달 추가되는 입덕볶이의 이벤트 내역입니다<br>
+                        자세한 내용은 이벤..
+                    </h3>
+
+                    <p class="event-date">
+                        2026.11.23 - 2026.12.31
+                    </p>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- =================================
+     JAVASCRIPT : SIDE MENU
+================================= -->
+
+<script>
+
+    // 메뉴 요소 가져오기
+    const menuOpen = document.getElementById('menuOpen');
+    const menuClose = document.getElementById('menuClose');
+    const menuLayer = document.getElementById('menuLayer');
+    const menuOverlay = document.getElementById('menuOverlay');
+    const sideMenuLinks = document.querySelectorAll('.side-menu-link');
+
+
+    // 메뉴 열기
+    function openMenu() {
+
+        menuLayer.classList.add('is-open');
+
+        menuLayer.setAttribute('aria-hidden', 'false');
+
+        menuOpen.setAttribute('aria-expanded', 'true');
+
+        document.body.classList.add('menu-open');
+
+    }
+
+
+    // 메뉴 닫기
+    function closeMenu() {
+
+        menuLayer.classList.remove('is-open');
+
+        menuLayer.setAttribute('aria-hidden', 'true');
+
+        menuOpen.setAttribute('aria-expanded', 'false');
+
+        document.body.classList.remove('menu-open');
+
+    }
+
+
+    // 햄버거 버튼 클릭
+    menuOpen.addEventListener('click', openMenu);
+
+
+    // 닫기 버튼 클릭
+    menuClose.addEventListener('click', closeMenu);
+
+
+    // 메뉴 외부 배경 클릭
+    menuOverlay.addEventListener('click', closeMenu);
+
+
+    // 메뉴 항목 클릭 시 메뉴 닫기
+    sideMenuLinks.forEach(function(link) {
+
+        link.addEventListener('click', function() {
+
+            closeMenu();
+
+        });
+
+    });
+
+
+    // ESC 키를 누르면 메뉴 닫기
+    document.addEventListener('keydown', function(event) {
+
+        if (event.key === 'Escape') {
+
+            closeMenu();
+
+        }
+
+    });
+
+</script>
+
+</body>
+</html>
