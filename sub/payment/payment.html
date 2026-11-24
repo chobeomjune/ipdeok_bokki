@@ -1,12 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>결제 페이지</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/payment.css">
 </head>
 <body>
-    
+
+<div id="app">
+
+    <header class="header">
+        <a href="index.html" class="logo">LOGO</a>
+    </header>
+
+    <main class="payment-screen">
+
+        <!-- TOP BAR -->
+        <div class="payment-topbar">
+            <button type="button" class="back-button" onclick="history.back()">‹</button>
+            <h1>결제하기</h1>
+            <a href="index.html" class="home-button">⌂</a>
+        </div>
+
+        <!-- ORDER SUMMARY -->
+        <section class="order-card">
+
+            <div class="store-info">
+                <div class="store-logo">
+                    <img src="images/store-logo.png" alt="입덕볶이">
+                </div>
+
+                <div class="store-text">
+                    <strong>입덕볶이</strong>
+                    <p>배달 예상 시간 25~35분</p>
+                </div>
+
+                <span class="arrow">›</span>
+            </div>
+
+            <div class="product-info">
+                <div class="product-image"></div>
+
+                <div class="product-name">
+                    <strong>라볶이</strong>
+                    <p>1개</p>
+                </div>
+
+                <strong class="product-price">10,500원</strong>
+            </div>
+
+            <div class="price-row">
+                <span>배달비</span>
+                <strong>3,000원</strong>
+            </div>
+
+            <div class="benefit-row">
+                <div class="benefit-name">
+                    <span class="coupon-icon">▰</span>
+                    <span>쿠폰 적용</span>
+                </div>
+                <a href="#" class="benefit-action">적용하기 ›</a>
+            </div>
+
+            <div class="benefit-row">
+                <div class="benefit-name">
+                    <span class="point-icon">P</span>
+                    <span>포인트 사용</span>
+                </div>
+                <span class="benefit-value">0P ›</span>
+            </div>
+
+        </section>
+
+        <!-- TOTAL PRICE -->
+        <section class="total-price">
+            <strong>총 결제 금액</strong>
+            <p>13,500<span>원</span></p>
+        </section>
+
+        <!-- PAYMENT METHOD -->
+        <section class="payment-method">
+
+            <h2>
+                <span class="method-icon">▣</span>
+                결제 수단 선택
+            </h2>
+
+            <div class="method-grid">
+
+                <button type="button" class="method-item active">
+                    <span class="method-check">●</span>
+                    <span>▣</span>
+                    <strong>신용카드</strong>
+                </button>
+
+                <button type="button" class="method-item">
+                    <span>▯</span>
+                    <strong>간편결제</strong>
+                </button>
+
+                <button type="button" class="method-item">
+                    <span>▤</span>
+                    <strong>계좌이체</strong>
+                </button>
+
+                <button type="button" class="method-item">
+                    <span>☎</span>
+                    <strong>휴대폰 결제</strong>
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- PROMOTION BANNER -->
+        <section class="payment-banner">
+
+            <div class="banner-image">♡</div>
+
+            <p>
+                지금 결제하고<br>
+                <strong>더 맛있는 떡볶이</strong>를 즐겨보세요!
+            </p>
+
+            <span>›</span>
+
+        </section>
+
+        <!-- PAYMENT BUTTON -->
+        <a href="payment_finish.html" class="payment-button">
+            13,500원 결제하기
+        </a>
+
+        <div class="home-indicator"></div>
+
+    </main>
+
+    <h2 class="page-label">결제 페이지</h2>
+
+</div>
+
 </body>
 </html>

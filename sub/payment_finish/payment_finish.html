@@ -1,12 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>결제 완료 페이지</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/payment_finish.css">
 </head>
 <body>
-    
+
+<div id="app">
+
+    <!-- HEADER -->
+    <header class="header">
+        <a href="index.html" class="logo">LOGO</a>
+    </header>
+
+    <main class="complete-screen">
+
+        <!-- TOP BAR -->
+        <div class="payment-topbar">
+            <a href="payment.html" class="back-button">‹</a>
+            <h1>결제하기</h1>
+            <span class="topbar-space"></span>
+        </div>
+
+        <!-- PRODUCT -->
+        <section class="complete-product">
+
+            <div class="product-image"></div>
+
+            <div class="product-info">
+                <strong>라볶이</strong>
+                <p>1개 | 기본메뉴</p>
+                <span class="product-price">8,900원</span>
+            </div>
+
+            <div class="quantity-control">
+                <span>−</span>
+                <strong>1</strong>
+                <span>＋</span>
+            </div>
+
+        </section>
+
+        <!-- DELIVERY INFO -->
+        <section class="delivery-section">
+
+            <div class="section-heading">
+                <h2>
+                    <span class="red-icon">●</span>
+                    배송 정보
+                </h2>
+
+                <a href="#">배송지 변경 ›</a>
+            </div>
+
+            <div class="delivery-address">
+
+                <span class="home-icon">⌂</span>
+
+                <div>
+                    <strong>
+                        서울특별시 강남구 테헤란로 123, 101동 1001호
+                    </strong>
+                    <p>010-1234-5678</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ORDER DETAILS -->
+        <section class="order-detail-section">
+
+            <h2>
+                <span class="red-icon">▣</span>
+                주문 상세
+            </h2>
+
+            <div class="detail-row">
+                <span>상품 금액</span>
+                <strong>8,900원</strong>
+            </div>
+
+            <div class="detail-row">
+                <span>배송비</span>
+                <strong>3,000원</strong>
+            </div>
+
+            <div class="detail-row discount-row">
+                <span>할인 금액</span>
+                <strong>-1,000원⌄</strong>
+            </div>
+
+            <div class="complete-total">
+                <strong>총 결제 금액</strong>
+                <p>10,900<span>원</span></p>
+            </div>
+
+        </section>
+
+        <!-- PAYMENT METHOD -->
+        <section class="complete-method-section">
+
+            <h2>
+                <span class="red-icon">▣</span>
+                결제 수단
+            </h2>
+
+            <div class="complete-method-list">
+
+                <div class="complete-method active">
+
+                    <span class="radio active"></span>
+                    <span class="method-symbol">▣</span>
+
+                    <div class="method-text">
+                        <strong>신용카드</strong>
+                        <p>카드로 간편하게 결제하세요</p>
+                    </div>
+
+                    <span class="method-arrow">›</span>
+
+                </div>
+
+                <div class="complete-method">
+
+                    <span class="radio"></span>
+                    <span class="method-symbol">▤</span>
+
+                    <div class="method-text">
+                        <strong>계좌이체</strong>
+                        <p>은행 계좌로 결제하세요</p>
+                    </div>
+
+                    <span class="method-arrow">›</span>
+
+                </div>
+
+                <div class="complete-method">
+
+                    <span class="radio"></span>
+                    <span class="method-symbol">▯</span>
+
+                    <div class="method-text">
+                        <strong>간편결제</strong>
+                        <p>간편하게 결제하세요</p>
+                    </div>
+
+                    <span class="easy-pay">
+                        <span>pay</span>
+                        <span>N Pay</span>
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- NOTICE -->
+        <div class="payment-notice">
+            <span>!</span>
+            주문 시, 결제 금액과 실제 금액이 다를 수 있습니다.
+        </div>
+
+        <!-- PAYMENT BUTTON -->
+        <a href="#" class="complete-payment-button">
+            10,900원 결제하기 ›
+        </a>
+
+        <!-- HOME INDICATOR -->
+        <div class="home-indicator"></div>
+
+    </main>
+
+    <h2 class="page-label">결제 완료 페이지</h2>
+
+</div>
+
 </body>
 </html>
