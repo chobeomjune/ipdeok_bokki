@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>상품 상세 페이지 | 입덕볶이</title>
+
+    <!-- Noto Sans KR -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- 상세 페이지 CSS -->
+    <link rel="stylesheet" href="css/introduce.css">
+</head>
+
+<body>
+
+<div id="app">
+
+    <!-- 상품 이미지 -->
+    <section class="detail-hero">
+
+        <div class="detail-hero-image"></div>
+
+        <!-- 상단 상태 표시 -->
+        <div class="status-bar">
+
+            <span class="status-time">9:41</span>
+
+            <div class="status-icons">
+
+                <!-- 통신 상태 -->
+                <svg viewBox="0 0 18 14" aria-hidden="true">
+                    <path d="M1 13V9" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 13V6" stroke="currentColor" stroke-width="2"/>
+                    <path d="M9 13V3" stroke="currentColor" stroke-width="2"/>
+                    <path d="M13 13V1" stroke="currentColor" stroke-width="2"/>
+                </svg>
+
+                <!-- 와이파이 -->
+                <svg viewBox="0 0 18 14" aria-hidden="true">
+                    <path d="M1 4C5-0.2 13-0.2 17 4"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.8"
+                          stroke-linecap="round"/>
+                    <path d="M4 7C7-0.1 11-0.1 14 7"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.8"
+                          stroke-linecap="round"/>
+                    <path d="M7 10C8 9 10 9 11 10"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.8"
+                          stroke-linecap="round"/>
+                    <circle cx="9" cy="12" r="1.2" fill="currentColor"/>
+                </svg>
+
+                <!-- 배터리 -->
+                <svg viewBox="0 0 25 12" aria-hidden="true">
+                    <rect x="1" y="1" width="20" height="10" rx="2"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.4"/>
+                    <rect x="3" y="3" width="15" height="6" rx="1"
+                          fill="currentColor"/>
+                    <path d="M23 4V8"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"/>
+                </svg>
+
+            </div>
+
+        </div>
+
+
+        <!-- 이미지 위 버튼 -->
+        <div class="detail-top-buttons">
+
+            <!-- 뒤로가기 -->
+            <a href="lists.html"
+               class="detail-icon-button back-button"
+               aria-label="뒤로가기">
+
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M15 5L8 12L15 19"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                </svg>
+
+            </a>
+
+
+            <div class="detail-right-buttons">
+
+                <!-- 공유하기 -->
+                <button type="button"
+                        class="detail-icon-button"
+                        id="shareButton"
+                        aria-label="상품 공유하기">
+
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 15V3"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"/>
+
+                        <path d="M7 8L12 3L17 8"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"/>
+
+                        <path d="M5 11V19H19V11"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"/>
+                    </svg>
+
+                </button>
+
+
+                <!-- 장바구니 -->
+                <a href="payment.html"
+                   class="detail-icon-button"
+                   aria-label="장바구니">
+
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M3 4H5L7.5 16H19L21 7H6"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1.8"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"/>
+
+                        <circle cx="9" cy="20" r="1.5" fill="currentColor"/>
+                        <circle cx="18" cy="20" r="1.5" fill="currentColor"/>
+                    </svg>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 상품 정보 -->
+    <main class="detail-content">
+
+        <!-- 상품명 및 가격 -->
+        <section class="product-info">
+
+            <h1 class="product-title">
+                국물 떡볶이 오리지널
+            </h1>
+
+            <p class="product-subtitle">
+                매콤달콤한 국민 떡볶이!
+            </p>
+
+
+            <!-- 별점 -->
+            <div class="product-rating">
+
+                <span class="rating-star">★</span>
+
+                <strong class="rating-score">4.8</strong>
+
+                <span class="rating-review">
+                    (리뷰 12,345개)
+                </span>
+
+            </div>
+
+
+            <!-- 가격 -->
+            <div class="product-price">
+
+                <p class="original-price">
+                    8,900원
+                </p>
+
+                <div class="sale-price-row">
+
+                    <strong class="sale-price">
+                        6,900원
+                    </strong>
+
+                    <span class="discount-badge">
+                        22%
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- 상품 설명 -->
+        <section class="product-description">
+
+            <button type="button"
+                    class="description-toggle"
+                    id="descriptionToggle"
+                    aria-expanded="true"
+                    aria-controls="descriptionContent">
+
+                <span>상품 설명</span>
+
+                <svg class="description-arrow"
+                     viewBox="0 0 24 24"
+                     aria-hidden="true">
+
+                    <path d="M6 9L12 15L18 9"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1.8"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"/>
+
+                </svg>
+
+            </button>
+
+
+            <div class="description-content" id="descriptionContent">
+
+                <p>
+                    매콤달콤한 국물 떡볶이로<br>
+                    입덕하는 그 맛!
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- 구성 안내 -->
+        <section class="product-option">
+
+            <h2 class="option-title">
+                구성 안내
+            </h2>
+
+            <div class="portion-list">
+
+                <button type="button"
+                        class="portion-button active">
+                    1인분
+                </button>
+
+                <button type="button"
+                        class="portion-button">
+                    2인분
+                </button>
+
+                <button type="button"
+                        class="portion-button">
+                    3인분
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- JavaScript -->
+<script>
+
+    // 상품 설명 펼치기 / 접기
+    const descriptionToggle =
+        document.getElementById('descriptionToggle');
+
+    const descriptionContent =
+        document.getElementById('descriptionContent');
+
+
+    descriptionToggle.addEventListener('click', function () {
+
+        const isExpanded =
+            descriptionToggle.getAttribute('aria-expanded') === 'true';
+
+        descriptionToggle.setAttribute(
+            'aria-expanded',
+            String(!isExpanded)
+        );
+
+        descriptionContent.classList.toggle(
+            'is-hidden',
+            isExpanded
+        );
+
+    });
+
+
+    // 구성 안내 버튼 선택
+    const portionButtons =
+        document.querySelectorAll('.portion-button');
+
+
+    portionButtons.forEach(function (button) {
+
+        button.addEventListener('click', function () {
+
+            portionButtons.forEach(function (item) {
+                item.classList.remove('active');
+            });
+
+            button.classList.add('active');
+
+        });
+
+    });
+
+
+    // 상품 공유하기
+    const shareButton =
+        document.getElementById('shareButton');
+
+
+    shareButton.addEventListener('click', async function () {
+
+        const shareData = {
+            title: '국물 떡볶이 오리지널',
+            text: '매콤달콤한 국민 떡볶이!',
+            url: window.location.href
+        };
+
+        try {
+
+            if (navigator.share) {
+
+                await navigator.share(shareData);
+
+            } else if (navigator.clipboard) {
+
+                await navigator.clipboard.writeText(
+                    window.location.href
+                );
+
+                alert('상품 링크가 복사되었습니다.');
+
+            } else {
+
+                alert('현재 브라우저에서는 공유 기능을 사용할 수 없습니다.');
+
+            }
+
+        } catch (error) {
+
+            if (error.name !== 'AbortError') {
+                console.error('공유 기능 오류:', error);
+            }
+
+        }
+
+    });
+
+</script>
+
+</body>
+</html>

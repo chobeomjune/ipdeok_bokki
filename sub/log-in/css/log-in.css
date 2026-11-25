@@ -1,0 +1,730 @@
+/* =========================================
+   01. RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    background-color: #ffffff;
+
+    color: #111111;
+
+    font-family: 'Noto Sans KR', sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================
+   02. APP
+========================================= */
+
+#app {
+    position: relative;
+
+    width: 100%;
+    max-width: 500px;
+    min-height: 100vh;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    background-color: #fff8f7;
+}
+
+
+/* =========================================
+   03. STATUS BAR
+========================================= */
+
+.status-bar {
+    position: relative;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 27px;
+
+    padding: 0 20px;
+
+    background-color: #fff8f7;
+
+    color: #111111;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.status-icons {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.status-icons svg {
+    display: block;
+
+    width: 13px;
+    height: 12px;
+}
+
+.status-icons svg:last-child {
+    width: 22px;
+}
+
+
+/* =========================================
+   04. LOGIN PAGE
+========================================= */
+
+.login-page {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    min-height: calc(100vh - 27px);
+
+    padding: 0 22px 25px;
+
+    overflow: hidden;
+
+    background-color: #fff8f7;
+
+    background-image:
+        radial-gradient(
+            ellipse at 10% 10%,
+            rgba(255, 190, 190, 0.20) 0,
+            rgba(255, 190, 190, 0.20) 20%,
+            transparent 21%
+        ),
+        radial-gradient(
+            ellipse at 90% 40%,
+            rgba(255, 190, 190, 0.16) 0,
+            rgba(255, 190, 190, 0.16) 16%,
+            transparent 17%
+        );
+}
+
+
+/* =========================================
+   05. BACKGROUND DECORATION
+========================================= */
+
+.background-decoration {
+    position: absolute;
+
+    pointer-events: none;
+
+    background-color: #ffd7d4;
+
+    opacity: 0.65;
+}
+
+
+/* 왼쪽 상단 */
+
+.decoration-top-left {
+    top: -18px;
+    left: -35px;
+
+    width: 105px;
+    height: 115px;
+
+    border-radius: 0 0 65% 35%;
+
+    transform: rotate(-15deg);
+}
+
+
+/* 오른쪽 상단 */
+
+.decoration-top-right {
+    top: 105px;
+    right: -50px;
+
+    width: 95px;
+    height: 65px;
+
+    border-radius: 50%;
+
+    transform: rotate(-25deg);
+
+    opacity: 0.35;
+}
+
+
+/* 오른쪽 하단 */
+
+.decoration-bottom-right {
+    right: -35px;
+    bottom: -25px;
+
+    width: 105px;
+    height: 115px;
+
+    border-radius: 65% 0 0 0;
+
+    transform: rotate(-15deg);
+}
+
+
+/* =========================================
+   06. NOTIFICATION BUTTON
+========================================= */
+
+.notification-button {
+    position: absolute;
+    top: 19px;
+    right: 20px;
+
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 27px;
+    height: 27px;
+
+    border: 1px solid #f3b8b8;
+    border-radius: 50%;
+
+    background-color: #ffe4e1;
+
+    color: #e9282d;
+
+    font-size: 15px;
+}
+
+.notification-icon {
+    display: block;
+
+    line-height: 1;
+}
+
+.notification-dot {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background-color: #e9282d;
+}
+
+
+/* =========================================
+   07. LOGO SECTION
+========================================= */
+
+.logo-section {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+
+    margin-top: 58px;
+}
+
+
+/* 로고 이미지 */
+
+.logo-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 155px;
+    height: 65px;
+
+    overflow: hidden;
+}
+
+.logo-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* 슬로건 */
+
+.login-slogan {
+    margin-top: 9px;
+
+    color: #111111;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    line-height: 1.55;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   08. CHARACTER SECTION
+========================================= */
+
+.character-section {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 190px;
+
+    margin-top: 12px;
+}
+
+
+/* 캐릭터 이미지 */
+
+.character-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 205px;
+    height: 190px;
+
+    overflow: hidden;
+}
+
+.character-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center bottom;
+}
+
+
+/* =========================================
+   09. LOGIN BUTTONS
+========================================= */
+
+.login-buttons {
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+
+    margin-top: 8px;
+}
+
+
+/* 공통 로그인 버튼 */
+
+.login-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 45px;
+
+    border-radius: 25px;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    text-align: center;
+
+    transition:
+        transform 0.15s ease,
+        opacity 0.15s ease;
+}
+
+.login-button:active {
+    transform: scale(0.98);
+    opacity: 0.85;
+}
+
+
+/* 간편 로그인 */
+
+.easy-login {
+    border: 1px solid #e9282d;
+
+    background-color: #e9282d;
+
+    color: #ffffff;
+
+    box-shadow: 0 2px 4px rgba(233, 40, 45, 0.12);
+}
+
+
+/* 일반 로그인 */
+
+.normal-login {
+    margin-top: 9px;
+
+    border: 1px solid #e9282d;
+
+    background-color: transparent;
+
+    color: #111111;
+}
+
+
+/* =========================================
+   10. SOCIAL LOGIN
+========================================= */
+
+.social-login-section {
+    position: relative;
+    z-index: 3;
+
+    width: 100%;
+
+    margin-top: 15px;
+}
+
+
+/* 또는 구분선 */
+
+.social-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    gap: 10px;
+}
+
+.social-divider span {
+    flex: 1;
+
+    height: 1px;
+
+    background-color: #dddddd;
+}
+
+.social-divider p {
+    flex-shrink: 0;
+
+    color: #555555;
+
+    font-size: 10px;
+    font-weight: 400;
+}
+
+
+/* 소셜 버튼 목록 */
+
+.social-login-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    gap: 15px;
+
+    margin-top: 13px;
+}
+
+
+/* 공통 소셜 버튼 */
+
+.social-button {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 39px;
+    height: 39px;
+
+    flex-shrink: 0;
+
+    border: 1px solid #eeeeee;
+    border-radius: 50%;
+
+    background-color: #ffffff;
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.15s ease,
+        opacity 0.15s ease;
+}
+
+.social-button:active {
+    transform: scale(0.93);
+    opacity: 0.8;
+}
+
+
+/* =========================================
+   11. NAVER
+========================================= */
+
+.social-naver {
+    border: 4px solid #ffffff;
+
+    background-color: #03c75a;
+}
+
+.naver-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 25px;
+    height: 25px;
+
+    color: #ffffff;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 23px;
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+
+/* =========================================
+   12. KAKAO
+========================================= */
+
+.social-kakao {
+    border: 4px solid #ffffff;
+
+    background-color: #fee500;
+}
+
+.social-kakao svg {
+    position: absolute;
+
+    width: 27px;
+    height: 27px;
+}
+
+.kakao-text {
+    position: relative;
+    z-index: 1;
+
+    margin-top: 1px;
+
+    color: #fee500;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 5px;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   13. GOOGLE
+========================================= */
+
+.social-google {
+    background-color: #ffffff;
+}
+
+.google-logo {
+    font-family: Arial, sans-serif;
+
+    font-size: 25px;
+    font-weight: 700;
+
+    background: conic-gradient(
+        from -45deg,
+        #4285f4 0deg 90deg,
+        #34a853 90deg 180deg,
+        #fbbc05 180deg 250deg,
+        #ea4335 250deg 310deg,
+        #4285f4 310deg 360deg
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+
+/* =========================================
+   14. APPLE
+========================================= */
+
+.social-apple {
+    background-color: #ffffff;
+}
+
+.social-apple svg {
+    width: 25px;
+    height: 25px;
+
+    color: #111111;
+}
+
+
+/* =========================================
+   15. SIGN UP
+========================================= */
+
+.signup-section {
+    position: relative;
+    z-index: 3;
+
+    width: 100%;
+
+    margin-top: 21px;
+}
+
+.signup-text {
+    color: #888888;
+
+    font-size: 9px;
+    font-weight: 300;
+
+    text-align: center;
+}
+
+.signup-link {
+    margin-left: 2px;
+
+    color: #e9282d;
+
+    font-size: 9px;
+    font-weight: 500;
+}
+
+
+/* =========================================
+   16. RESPONSIVE
+========================================= */
+
+@media (min-width: 501px) {
+
+    #app {
+        width: 500px;
+    }
+
+}
+
+
+/* 작은 모바일 화면 */
+
+@media (max-width: 350px) {
+
+    .login-page {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .logo-section {
+        margin-top: 45px;
+    }
+
+    .character-section {
+        height: 170px;
+    }
+
+    .character-image {
+        width: 185px;
+        height: 170px;
+    }
+
+    .login-button {
+        height: 43px;
+    }
+
+    .social-login-list {
+        gap: 12px;
+    }
+
+}
+
+
+/* 화면 높이가 작은 기기 */
+
+@media (max-height: 700px) {
+
+    .logo-section {
+        margin-top: 35px;
+    }
+
+    .character-section {
+        height: 155px;
+        margin-top: 5px;
+    }
+
+    .character-image {
+        height: 155px;
+    }
+
+    .login-buttons {
+        margin-top: 5px;
+    }
+
+    .social-login-section {
+        margin-top: 12px;
+    }
+
+    .signup-section {
+        margin-top: 15px;
+    }
+
+}

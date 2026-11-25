@@ -1,5 +1,5 @@
 /* =========================================
-   01. RESET & COMMON
+   01. RESET
 ========================================= */
 
 * {
@@ -16,13 +16,14 @@ html {
 body {
     width: 100%;
     min-height: 100vh;
-    font-family: 'Noto Sans KR', sans-serif;
-    color: #000000;
-    background-color: #ffffff;
-}
 
-body.menu-open {
-    overflow: hidden;
+    background-color: #ffffff;
+
+    color: #000000;
+
+    font-family: 'Noto Sans KR', sans-serif;
+
+    -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -32,40 +33,60 @@ a {
 
 button {
     font-family: inherit;
-    border: none;
     cursor: pointer;
+    border: none;
 }
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* =========================================
+   02. APP
+========================================= */
 
 #app {
     position: relative;
+
     width: 100%;
     max-width: 500px;
     min-height: 100vh;
+
     margin: 0 auto;
+
+    overflow: hidden;
+
     background-color: #ffffff;
 }
 
 
 /* =========================================
-   02. HEADER
+   03. HEADER
 ========================================= */
 
 .header {
     position: relative;
-    z-index: 10;
+    z-index: 20;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     width: 100%;
-    height: 52px;
-    padding: 0 19px;
+    height: 48px;
+
+    padding: 0 18px;
+
     background-color: #ffffff;
 }
 
 .logo {
-    font-size: 16px;
+    color: #111111;
+
+    font-size: 17px;
     font-weight: 500;
-    color: #000000;
 }
 
 
@@ -75,37 +96,45 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+
+    width: 30px;
+    height: 30px;
+
     gap: 5px;
-    width: 36px;
-    height: 36px;
-    padding: 5px;
-    background: transparent;
+
+    background-color: transparent;
 }
 
 .hamburger-button span {
     display: block;
+
     width: 23px;
     height: 2px;
-    border-radius: 5px;
-    background-color: #000000;
+
+    border-radius: 2px;
+
+    background-color: #111111;
 }
 
 
 /* =========================================
-   03. SIDE MENU
+   04. SIDE MENU
 ========================================= */
 
 .menu-layer {
     position: fixed;
-    z-index: 1000;
     inset: 0;
+
+    z-index: 100;
+
     visibility: hidden;
+
     pointer-events: none;
 }
 
 .menu-layer.is-open {
     visibility: visible;
+
     pointer-events: auto;
 }
 
@@ -115,9 +144,12 @@ button {
 .menu-overlay {
     position: absolute;
     inset: 0;
+
     background-color: rgba(0, 0, 0, 0.45);
+
     opacity: 0;
-    transition: opacity 0.35s ease;
+
+    transition: opacity 0.3s ease;
 }
 
 .menu-layer.is-open .menu-overlay {
@@ -125,19 +157,28 @@ button {
 }
 
 
-/* 오른쪽 슬라이드 메뉴 */
+/* 슬라이드 메뉴 */
 
 .side-menu {
     position: absolute;
     top: 0;
-    right: max(0px, calc((100vw - 500px) / 2));
-    width: min(66.6667vw, 333px);
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 66.666%;
+    max-width: 420px;
     height: 100%;
-    min-height: 100vh;
-    padding: 0 22px;
+
+    padding: 24px 22px;
+
     background-color: #ffffff;
-    transform: translateX(105%);
-    transition: transform 0.35s ease;
+
+    transform: translateX(100%);
+
+    transition: transform 0.3s ease;
+
     overflow-y: auto;
 }
 
@@ -152,23 +193,29 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 65px;
-    border-bottom: 1px solid #eeeeee;
+
+    width: 100%;
+    height: 45px;
 }
 
 .side-menu-title {
-    font-size: 20px;
+    color: #111111;
+
+    font-size: 24px;
     font-weight: 700;
-    color: #000000;
 }
 
 .menu-close-button {
-    width: 35px;
-    height: 35px;
-    background: transparent;
-    color: #000000;
-    font-size: 32px;
+    width: 32px;
+    height: 32px;
+
+    background-color: transparent;
+
+    color: #111111;
+
+    font-size: 35px;
     font-weight: 300;
+
     line-height: 1;
 }
 
@@ -178,8 +225,14 @@ button {
 .side-menu-list {
     display: flex;
     flex-direction: column;
+
+    width: 100%;
+
+    gap: 0;
+
+    margin-top: 55px;
+
     list-style: none;
-    padding-top: 20px;
 }
 
 .side-menu-list li {
@@ -189,95 +242,126 @@ button {
 .side-menu-link {
     display: flex;
     align-items: center;
+
     width: 100%;
-    min-height: 65px;
-    font-size: 16px;
-    font-weight: 500;
-    color: #222222;
-    transition: color 0.2s ease;
+    min-height: 90px;
+
+    color: #111111;
+
+    font-size: 19px;
+    font-weight: 400;
 }
 
-.side-menu-link:hover {
-    color: #ff922e;
+.side-menu-link:active {
+    color: #f58220;
+}
+
+
+/* 메뉴 열렸을 때 배경 스크롤 방지 */
+
+body.menu-open {
+    overflow: hidden;
 }
 
 
 /* =========================================
-   04. HERO SECTION
+   05. HERO
 ========================================= */
 
 .hero {
     width: 100%;
-    height: 292px;
-    background-color: #858585;
 }
 
 .hero-image {
+    display: block;
+
     width: 100%;
-    height: 100%;
+    height: 292px;
+
     background-color: #858585;
-    background-image: url('../images/hero.jpg');
-    background-position: center;
+
+    background-image: url("../images/main-hero.png");
     background-size: cover;
-    background-repeat: no-repeat;
+    background-position: center;
+
+    overflow: hidden;
 }
 
 
 /* =========================================
-   05. SECTION 1 : ORDER
+   06. ORDER SECTION
 ========================================= */
 
 .order-section {
     width: 100%;
-    padding: 17px 14px 36px;
+
+    padding: 17px 13px 35px;
+
     background-color: #ffffff;
 }
 
 .order-buttons {
     display: flex;
     flex-direction: column;
+
+    width: 100%;
+
     gap: 16px;
 }
+
+
+/* 공통 주문 버튼 */
 
 .order-button {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+
     width: 100%;
-    height: 80px;
-    border-radius: 15px;
+    height: 69px;
+
+    border-radius: 12px;
+
     background-color: #ffcc00;
+
     color: #ffffff;
-    font-size: 18px;
+
+    font-size: 17px;
     font-weight: 500;
+
+    gap: 9px;
+
+    transition:
+        transform 0.15s ease,
+        opacity 0.15s ease;
 }
+
+.order-button:active {
+    transform: scale(0.98);
+    opacity: 0.85;
+}
+
+
+/* 배달 주문하기 */
 
 .order-button-main {
-    height: 80px;
-    background-color: #ff922e;
-    font-size: 19px;
-}
+    height: 69px;
 
-.order-button-row {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-}
+    background-color: #ff8a24;
 
-.order-button-row .order-button {
-    height: 80px;
+    font-size: 18px;
 }
 
 
-/* 배달 아이콘 */
+/* 버튼 아이콘 */
 
 .delivery-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 42px;
-    height: 42px;
+
+    width: 45px;
+    height: 45px;
 }
 
 .delivery-icon svg {
@@ -286,11 +370,28 @@ button {
 }
 
 
+/* 전화 / 쿠폰 버튼 */
+
+.order-button-row {
+    display: flex;
+
+    width: 100%;
+
+    gap: 8px;
+}
+
+.order-button-row .order-button {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
 /* 전화 아이콘 */
 
 .phone-icon {
-    font-size: 27px;
-    line-height: 1;
+    font-size: 23px;
+    font-weight: 400;
 }
 
 
@@ -300,151 +401,224 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 27px;
-    height: 23px;
-    border: 2px solid #ffffff;
-    border-radius: 4px;
+
+    width: 23px;
+    height: 20px;
+
+    border: 1.5px solid #ffffff;
+    border-radius: 3px;
+
     font-size: 17px;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 
 /* =========================================
-   06. COMMON SECTION TITLE
+   07. SECTION TITLE
 ========================================= */
 
 .section-title {
-    text-align: center;
+    color: #000000;
+
     font-size: 30px;
     font-weight: 500;
-    color: #000000;
+
+    line-height: 1.4;
+
+    text-align: center;
 }
 
 
 /* =========================================
-   07. SECTION 2 : RECOMMEND
+   08. HASHTAG
 ========================================= */
-
-.recommend-section {
-    width: 100%;
-    min-height: 510px;
-    padding-top: 42px;
-    padding-bottom: 65px;
-    overflow: hidden;
-    background-color: #fff2c4;
-}
-
-.recommend-section .section-title {
-    margin-bottom: 17px;
-}
-
-
-/* 해시태그 */
 
 .hashtag-list {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    width: 100%;
+
     gap: 10px;
 }
+
+
+/* 해시태그 버튼 */
 
 .hashtag {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 48px;
-    height: 20px;
-    padding: 0 12px;
-    border: 1px solid #cccccc;
+
+    min-width: 49px;
+    height: 21px;
+
+    padding: 0 10px;
+
+    border: 1px solid #999999;
     border-radius: 20px;
+
     background-color: transparent;
-    color: #777777;
-    font-size: 9px;
+
+    color: #555555;
+
+    font-size: 8px;
     font-weight: 400;
+
     white-space: nowrap;
 }
 
+
+/* 활성화 */
+
 .hashtag.active {
-    border-color: #ff922e;
-    background-color: #ff922e;
+    border-color: #ff8a24;
+
+    background-color: #ff8a24;
+
     color: #ffffff;
 }
 
 
-/* 추천 메뉴 슬라이드 */
+/* =========================================
+   09. RECOMMEND SECTION
+========================================= */
+
+.recommend-section {
+    position: relative;
+
+    width: 100%;
+    height: 510px;
+
+    padding-top: 42px;
+
+    background-color: #fff0c2;
+
+    overflow: hidden;
+}
+
+.recommend-section .hashtag-list {
+    margin-top: 13px;
+}
+
+
+/* 추천 메뉴 캐러셀 */
 
 .recommend-carousel {
+    position: relative;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
+
     width: 100%;
-    margin-top: 29px;
+    height: 300px;
+
+    margin-top: 28px;
 }
+
+
+/* 추천 카드 공통 */
 
 .recommend-card {
-    flex-shrink: 0;
-    height: 245px;
-    border-radius: 13px;
-}
-
-
-/* 좌우 카드 */
-
-.recommend-card-side {
-    width: 12%;
-    background-color: #ffcc00;
-}
-
-.recommend-card-side.left {
-    border-radius: 0 13px 13px 0;
-}
-
-.recommend-card-side.right {
-    border-radius: 13px 0 0 13px;
-}
-
-
-/* 중앙 카드 */
-
-.recommend-card-main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 64%;
-    padding: 29px 12px 10px;
-    background-color: #ff922e;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+
+/* 가운데 추천 카드 */
+
+.recommend-card-main {
+    position: relative;
+    z-index: 2;
+
+    width: 167px;
+    height: 245px;
+
+    padding: 20px 10px;
+
+    background-color: #ff8a24;
+
     color: #ffffff;
+
     text-align: center;
 }
 
+
+/* 양쪽 카드 */
+
+.recommend-card-side {
+    position: absolute;
+    top: 50%;
+
+    width: 100px;
+    height: 245px;
+
+    background-color: #ffcc00;
+
+    transform: translateY(-50%);
+}
+
+.recommend-card-side.left {
+    left: -69px;
+}
+
+.recommend-card-side.right {
+    right: -69px;
+}
+
+
+/* 추천 콘텐츠 */
+
 .recommend-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     width: 100%;
 }
 
 .recommend-label {
-    display: block;
-    font-size: 11px;
+    color: #ffffff;
+
+    font-size: 10px;
     font-weight: 400;
 }
 
 .recommend-name {
-    margin-top: 3px;
+    margin-top: 5px;
+
+    color: #ffffff;
+
     font-size: 13px;
     font-weight: 500;
 }
+
+
+/* 주문하기 버튼 */
 
 .recommend-button {
     display: flex;
     align-items: center;
     justify-content: center;
+
     width: 90px;
     height: 27px;
-    margin: 12px auto 0;
+
+    margin-top: 10px;
+
     border: 1px solid #ffffff;
-    border-radius: 9px;
+    border-radius: 15px;
+
     color: #ffffff;
-    font-size: 11px;
+
+    font-size: 10px;
     font-weight: 400;
 }
 
@@ -452,32 +626,40 @@ button {
 /* 추천 메뉴 이미지 */
 
 .recommend-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 145px;
+    height: 145px;
+
+    margin-top: 15px;
+
+    overflow: hidden;
+}
+
+.recommend-image-placeholder img {
     width: 100%;
-    max-width: 135px;
-    aspect-ratio: 1 / 1;
-    margin-top: 16px;
-    border-radius: 50%;
-    background-color: #e5e5e5;
-    background-image: url('../images/recommend-menu.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    height: 100%;
+
+    object-fit: contain;
 }
 
 
 /* =========================================
-   08. SECTION 3 : MENU
+   10. MENU SECTION
 ========================================= */
 
 .menu-section {
     width: 100%;
-    padding: 42px 13px 70px;
+
+    padding: 42px 13px 50px;
+
     background-color: #ffffff;
 }
 
 .menu-section .hashtag-list {
-    margin-top: 15px;
-    margin-bottom: 33px;
+    margin-top: 13px;
 }
 
 
@@ -485,55 +667,92 @@ button {
 
 .menu-grid {
     display: grid;
+
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 10px;
-    row-gap: 18px;
+
+    gap: 20px 10px;
+
+    width: 100%;
+
+    margin-top: 34px;
 }
+
+
+/* 메뉴 아이템 */
 
 .menu-item {
     display: block;
+
     width: 100%;
+
     min-width: 0;
 }
+
+
+/* 메뉴 이미지 */
 
 .menu-image-placeholder {
     width: 100%;
     aspect-ratio: 1 / 1;
-    border-radius: 11px;
+
+    border-radius: 10px;
+
     background-color: #858585;
+
+    overflow: hidden;
 }
+
+.menu-image-placeholder img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* 메뉴 타이틀 */
 
 .menu-item-title {
     margin-top: 5px;
-    font-size: 12px;
-    font-weight: 500;
+
     color: #000000;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    line-height: 1.4;
 }
 
 
 /* =========================================
-   09. SECTION 4 : EVENT
+   11. EVENT SECTION
 ========================================= */
 
 .event-section {
     width: 100%;
-    padding-top: 5px;
-    padding-bottom: 70px;
+
+    padding-bottom: 40px;
+
     background-color: #ffffff;
 }
 
+
+/* 이벤트 헤더 */
+
 .event-heading {
-    padding: 0 12px 20px;
+    width: 100%;
+
+    padding: 25px 15px 20px;
+
     text-align: center;
 }
 
-.event-heading .section-title {
-    margin-bottom: 8px;
-}
-
 .event-description {
+    margin-top: 9px;
+
     color: #838383;
-    font-size: 13px;
+
+    font-size: 12px;
     font-weight: 400;
 }
 
@@ -541,82 +760,183 @@ button {
 /* 이벤트 탭 */
 
 .event-tabs {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    align-items: center;
+
     width: 100%;
-    height: 38px;
+    height: 40px;
+
     border-top: 1px solid #eeeeee;
     border-bottom: 1px solid #eeeeee;
 }
 
 .event-tab {
+    flex: 1;
+
+    height: 100%;
+
     background-color: #ffffff;
-    color: #777777;
-    font-size: 11px;
+
+    color: #555555;
+
+    font-size: 12px;
     font-weight: 400;
 }
 
 .event-tab.active {
     color: #000000;
-    font-weight: 500;
+
+    font-weight: 700;
+}
+
+
+/* 이벤트 목록 */
+
+.event-list {
+    width: 100%;
+
+    padding: 30px 13px 0;
 }
 
 
 /* 이벤트 카드 */
 
-.event-list {
-    width: 100%;
-    padding: 31px 13px 0;
-}
-
 .event-card {
     display: block;
+
     width: 100%;
-    overflow: hidden;
+
     border: 1px solid #dddddd;
-    border-radius: 13px;
+    border-radius: 12px;
+
     background-color: #ffffff;
+
+    overflow: hidden;
 }
+
+
+/* 이벤트 이미지 */
 
 .event-image-placeholder {
     width: 100%;
-    aspect-ratio: 1.25 / 1;
-    border-radius: 12px;
-    background-color: #99999d;
-    background-image: url('../images/event.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    height: 160px;
+
+    background-color: #999999;
+
+    overflow: hidden;
 }
 
+.event-image-placeholder img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* 이벤트 내용 */
+
 .event-content {
-    padding: 10px 11px 23px;
+    padding: 10px 12px 18px;
 }
 
 .event-subtitle {
-    margin-bottom: 3px;
     color: #555555;
+
     font-size: 11px;
     font-weight: 400;
 }
 
 .event-title {
+    margin-top: 4px;
+
     color: #000000;
-    font-size: 12px;
+
+    font-size: 13px;
     font-weight: 500;
+
     line-height: 1.5;
 }
 
 .event-date {
-    margin-top: 24px;
+    margin-top: 22px;
+
     color: #838383;
+
     font-size: 11px;
     font-weight: 300;
 }
 
 
 /* =========================================
-   10. RESPONSIVE
+   12. BOTTOM NAVIGATION
+========================================= */
+
+.bottom-navigation {
+    position: sticky;
+    bottom: 0;
+
+    z-index: 15;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 100%;
+    height: 58px;
+
+    border-top: 1px solid #eeeeee;
+
+    background-color: #ffffff;
+}
+
+
+/* 하단 메뉴 아이템 */
+
+.bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    flex: 1;
+
+    height: 100%;
+
+    gap: 3px;
+
+    color: #777777;
+
+    font-size: 10px;
+    font-weight: 400;
+}
+
+
+/* 하단 아이콘 */
+
+.bottom-nav-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 22px;
+
+    font-size: 21px;
+    line-height: 1;
+}
+
+
+/* 활성화 메뉴 */
+
+.bottom-nav-item.active {
+    color: #e9282d;
+
+    font-weight: 500;
+}
+
+
+/* =========================================
+   13. RESPONSIVE
 ========================================= */
 
 @media (min-width: 501px) {
@@ -627,22 +947,36 @@ button {
 
 }
 
+
+/* 작은 화면 */
+
 @media (max-width: 350px) {
 
+    .hero-image {
+        height: 260px;
+    }
+
     .order-button {
+        height: 62px;
+
         font-size: 15px;
     }
 
+    .order-button-main {
+        height: 65px;
+    }
+
     .recommend-card-main {
-        width: 64%;
+        width: 155px;
     }
 
-    .menu-item-title {
-        font-size: 11px;
+    .recommend-image-placeholder {
+        width: 135px;
+        height: 135px;
     }
 
-    .section-title {
-        font-size: 27px;
+    .menu-grid {
+        gap: 18px 8px;
     }
 
 }

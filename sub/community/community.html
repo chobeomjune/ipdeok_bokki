@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>커뮤니티 | 입덕볶이</title>
+
+    <!-- Noto Sans KR -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- 커뮤니티 CSS -->
+    <link rel="stylesheet" href="css/community.css">
+</head>
+
+<body>
+
+<div id="app">
+
+    <!-- =================================
+         STATUS BAR
+    ================================== -->
+    <div class="status-bar">
+
+        <span class="status-time">9:41</span>
+
+        <div class="status-icons">
+
+            <!-- 통신 -->
+            <svg viewBox="0 0 18 14" aria-hidden="true">
+                <path d="M1 13V9M5 13V6M9 13V3M13 13V1"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"/>
+            </svg>
+
+            <!-- 와이파이 -->
+            <svg viewBox="0 0 18 14" aria-hidden="true">
+                <path d="M1 4C5 0 13 0 17 4"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"/>
+                <path d="M4 7C7 4 11 4 14 7"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"/>
+                <circle cx="9" cy="11" r="1.5" fill="currentColor"/>
+            </svg>
+
+            <!-- 배터리 -->
+            <svg viewBox="0 0 25 12" aria-hidden="true">
+                <rect x="1" y="1" width="21" height="10" rx="2"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.4"/>
+                <rect x="3" y="3" width="16" height="6" rx="1"
+                      fill="currentColor"/>
+                <path d="M24 4V8"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"/>
+            </svg>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================
+         HEADER
+    ================================== -->
+    <header class="community-header">
+
+        <!-- 뒤로가기 -->
+        <a href="index.html"
+           class="header-back"
+           aria-label="뒤로가기">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15 5L8 12L15 19"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"/>
+            </svg>
+
+        </a>
+
+
+        <h1 class="header-title">커뮤니티</h1>
+
+
+        <!-- 더보기 -->
+        <button type="button"
+                class="header-more"
+                id="moreButton"
+                aria-label="더보기">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="5" cy="12" r="1.5" fill="currentColor"/>
+                <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+                <circle cx="19" cy="12" r="1.5" fill="currentColor"/>
+            </svg>
+
+        </button>
+
+    </header>
+
+
+    <!-- =================================
+         COMMUNITY POST
+    ================================== -->
+    <main class="community-main">
+
+        <article class="community-post">
+
+
+            <!-- 게시글 작성자 -->
+            <div class="post-author">
+
+                <div class="author-profile">
+
+                    <img src="images/community-profile.jpg"
+                         alt="떡덕이러버 프로필">
+
+                </div>
+
+
+                <div class="author-info">
+
+                    <p class="author-name">
+                        떡덕이러버
+                    </p>
+
+                    <p class="post-time">
+                        2시간 전
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 게시글 내용 -->
+            <div class="post-text">
+
+                <p>
+                    오늘은 로제떡볶이 먹었어요!
+                </p>
+
+                <p>
+                    진짜 너무 맛있네요 ㅠㅠ 💕
+                </p>
+
+            </div>
+
+
+            <!-- 게시글 이미지 -->
+            <div class="post-image">
+
+                <img src="images/community-rose.jpg"
+                     alt="맛있게 조리된 로제떡볶이">
+
+            </div>
+
+
+            <!-- 게시글 반응 -->
+            <div class="post-actions">
+
+
+                <!-- 좋아요 -->
+                <button type="button"
+                        class="post-action like-button"
+                        id="likeButton"
+                        aria-pressed="false">
+
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20.5 8.5C20.5 14 12 20 12 20S3.5 14 3.5 8.5C3.5 4.5 8.5 3 12 7C15.5 3 20.5 4.5 20.5 8.5Z"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1.6"
+                              stroke-linejoin="round"/>
+                    </svg>
+
+                    <span id="likeCount">124</span>
+
+                </button>
+
+
+                <!-- 댓글 -->
+                <button type="button"
+                        class="post-action comment-button"
+                        id="commentButton">
+
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M4 5H20V17H12L7 21V17H4V5Z"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1.6"
+                              stroke-linejoin="round"/>
+                    </svg>
+
+                    <span id="commentCount">32</span>
+
+                </button>
+
+
+                <!-- 공유 -->
+                <button type="button"
+                        class="post-action share-button"
+                        id="shareButton"
+                        aria-label="게시글 공유">
+
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 15V3"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1.6"
+                              stroke-linecap="round"/>
+
+                        <path d="M7 8L12 3L17 8"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1.6"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"/>
+
+                        <path d="M5 11V20H19V11"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1.6"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"/>
+                    </svg>
+
+                </button>
+
+            </div>
+
+
+            <!-- =================================
+                 COMMENTS
+            ================================== -->
+            <section class="comment-list" id="commentList">
+
+
+                <!-- 댓글 1 -->
+                <div class="comment-item">
+
+                    <div class="comment-profile">
+
+                        <img src="images/comment-profile-1.jpg"
+                             alt="댓글 작성자 프로필">
+
+                    </div>
+
+
+                    <div class="comment-content">
+
+                        <div class="comment-meta">
+
+                            <span class="comment-name">
+                                맛잘알멍멍
+                            </span>
+
+                            <span class="comment-time">
+                                1시간 전
+                            </span>
+
+                        </div>
+
+                        <p class="comment-text">
+                            완전 맛있었어요! 다음에 저도 먹어볼게요!
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 댓글 2 -->
+                <div class="comment-item">
+
+                    <div class="comment-profile">
+
+                        <img src="images/comment-profile-2.jpg"
+                             alt="댓글 작성자 프로필">
+
+                    </div>
+
+
+                    <div class="comment-content">
+
+                        <div class="comment-meta">
+
+                            <span class="comment-name">
+                                떡볶이마스터
+                            </span>
+
+                            <span class="comment-time">
+                                1시간 전
+                            </span>
+
+                        </div>
+
+                        <p class="comment-text">
+                            로제는 진짜 못 참죠 ㅎㅎㅎㅎ
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </article>
+
+    </main>
+
+
+    <!-- =================================
+         COMMENT INPUT
+    ================================== -->
+    <form class="comment-form" id="commentForm">
+
+        <input type="text"
+               id="commentInput"
+               placeholder="댓글을 입력해주세요..."
+               aria-label="댓글 입력"
+               autocomplete="off">
+
+        <button type="submit"
+                class="comment-submit"
+                aria-label="댓글 전송">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 4L21 12L4 20L7 12L4 4Z"
+                              fill="currentColor"
+                              stroke="currentColor"
+                              stroke-width="1.2"
+                              stroke-linejoin="round"/>
+                <path d="M7 12H17"
+                              fill="none"
+                              stroke="#ffffff"
+                              stroke-width="1.5"
+                              stroke-linecap="round"/>
+            </svg>
+
+        </button>
+
+    </form>
+
+</div>
+
+
+<!-- =================================
+     JAVASCRIPT
+================================= -->
+<script>
+
+    // -----------------------------
+    // LIKE BUTTON
+    // -----------------------------
+
+    const likeButton =
+        document.getElementById('likeButton');
+
+    const likeCount =
+        document.getElementById('likeCount');
+
+    let isLiked = false;
+    let currentLikeCount = 124;
+
+
+    likeButton.addEventListener('click', function () {
+
+        isLiked = !isLiked;
+
+        likeButton.classList.toggle('liked', isLiked);
+
+        likeButton.setAttribute(
+            'aria-pressed',
+            String(isLiked)
+        );
+
+
+        currentLikeCount += isLiked ? 1 : -1;
+
+        likeCount.textContent = currentLikeCount;
+
+    });
+
+
+    // -----------------------------
+    // COMMENT BUTTON
+    // -----------------------------
+
+    const commentButton =
+        document.getElementById('commentButton');
+
+    const commentInput =
+        document.getElementById('commentInput');
+
+
+    commentButton.addEventListener('click', function () {
+
+        commentInput.focus();
+
+    });
+
+
+    // -----------------------------
+    // COMMENT SUBMIT
+    // -----------------------------
+
+    const commentForm =
+        document.getElementById('commentForm');
+
+    const commentList =
+        document.getElementById('commentList');
+
+    const commentCount =
+        document.getElementById('commentCount');
+
+
+    let currentCommentCount = 32;
+
+
+    commentForm.addEventListener('submit', function (event) {
+
+        event.preventDefault();
+
+        const commentText =
+            commentInput.value.trim();
+
+
+        if (commentText === '') {
+            return;
+        }
+
+
+        // 댓글 항목 생성
+        const commentItem =
+            document.createElement('div');
+
+        commentItem.className = 'comment-item';
+
+
+        // 프로필
+        const profile =
+            document.createElement('div');
+
+        profile.className = 'comment-profile';
+
+
+        const profileImage =
+            document.createElement('img');
+
+        profileImage.src =
+            'images/community-profile.jpg';
+
+        profileImage.alt =
+            '내 프로필';
+
+
+        profile.appendChild(profileImage);
+
+
+        // 댓글 내용 영역
+        const content =
+            document.createElement('div');
+
+        content.className = 'comment-content';
+
+
+        // 작성자 정보
+        const meta =
+            document.createElement('div');
+
+        meta.className = 'comment-meta';
+
+
+        const name =
+            document.createElement('span');
+
+        name.className = 'comment-name';
+
+        name.textContent = '나';
+
+
+        const time =
+            document.createElement('span');
+
+        time.className = 'comment-time';
+
+        time.textContent = '방금 전';
+
+
+        meta.appendChild(name);
+        meta.appendChild(time);
+
+
+        // 댓글 텍스트
+        const text =
+            document.createElement('p');
+
+        text.className = 'comment-text';
+
+        text.textContent = commentText;
+
+
+        content.appendChild(meta);
+        content.appendChild(text);
+
+
+        commentItem.appendChild(profile);
+        commentItem.appendChild(content);
+
+
+        commentList.appendChild(commentItem);
+
+
+        // 댓글 수 증가
+        currentCommentCount++;
+
+        commentCount.textContent =
+            currentCommentCount;
+
+
+        // 입력창 초기화
+        commentInput.value = '';
+
+    });
+
+
+    // -----------------------------
+    // SHARE BUTTON
+    // -----------------------------
+
+    const shareButton =
+        document.getElementById('shareButton');
+
+
+    shareButton.addEventListener('click', async function () {
+
+        const shareData = {
+            title: '커뮤니티',
+            text: '입덕볶이 커뮤니티 게시글',
+            url: window.location.href
+        };
+
+
+        try {
+
+            if (navigator.share) {
+
+                await navigator.share(shareData);
+
+            } else if (navigator.clipboard) {
+
+                await navigator.clipboard.writeText(
+                    window.location.href
+                );
+
+                alert('게시글 링크가 복사되었습니다.');
+
+            } else {
+
+                alert('현재 브라우저에서는 공유 기능을 사용할 수 없습니다.');
+
+            }
+
+        } catch (error) {
+
+            if (error.name !== 'AbortError') {
+                console.error('공유 오류:', error);
+            }
+
+        }
+
+    });
+
+
+    // -----------------------------
+    // MORE BUTTON
+    // -----------------------------
+
+    const moreButton =
+        document.getElementById('moreButton');
+
+
+    moreButton.addEventListener('click', function () {
+
+        alert('더보기 메뉴');
+
+    });
+
+
+    // -----------------------------
+    // IMAGE FALLBACK
+    // -----------------------------
+
+    const images =
+        document.querySelectorAll('img');
+
+
+    images.forEach(function (img) {
+
+        img.addEventListener('error', function () {
+
+            img.style.display = 'none';
+
+        });
+
+    });
+
+</script>
+
+</body>
+</html>

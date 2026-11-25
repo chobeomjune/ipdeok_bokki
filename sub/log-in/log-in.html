@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>로그인 | 입덕볶이</title>
+
+    <!-- Noto Sans KR -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- 로그인 CSS -->
+    <link rel="stylesheet" href="css/log-in.css">
+</head>
+
+<body>
+
+<div id="app">
+
+    <!-- =================================
+         STATUS BAR
+    ================================== -->
+    <div class="status-bar">
+
+        <span class="status-time">9:41</span>
+
+        <div class="status-icons">
+
+            <!-- 통신 신호 -->
+            <svg viewBox="0 0 18 14" aria-hidden="true">
+                <path d="M1 13V9M5 13V6M9 13V3M13 13V1"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"/>
+            </svg>
+
+            <!-- 와이파이 -->
+            <svg viewBox="0 0 18 14" aria-hidden="true">
+                <path d="M1 4C5 0 13 0 17 4"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"/>
+                <path d="M4 7C7 4 11 4 14 7"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"/>
+                <circle cx="9" cy="11" r="1.5" fill="currentColor"/>
+            </svg>
+
+            <!-- 배터리 -->
+            <svg viewBox="0 0 25 12" aria-hidden="true">
+                <rect x="1" y="1" width="21" height="10" rx="2"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.4"/>
+                <rect x="3" y="3" width="16" height="6" rx="1"
+                      fill="currentColor"/>
+                <path d="M24 4V8"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"/>
+            </svg>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================
+         LOGIN PAGE
+    ================================== -->
+    <main class="login-page">
+
+
+        <!-- 상단 장식 -->
+        <div class="background-decoration decoration-top-left"></div>
+        <div class="background-decoration decoration-top-right"></div>
+        <div class="background-decoration decoration-bottom-right"></div>
+
+
+        <!-- 우측 상단 알림 버튼 -->
+        <button type="button"
+                class="notification-button"
+                id="notificationButton"
+                aria-label="알림">
+
+            <span class="notification-icon">♧</span>
+            <span class="notification-dot"></span>
+
+        </button>
+
+
+        <!-- =================================
+             LOGO
+        ================================== -->
+        <section class="logo-section">
+
+            <div class="logo-image">
+
+                <!-- 실제 로고 이미지로 교체 -->
+                <img src="images/logo.png"
+                     alt="입덕볶이 로고">
+
+            </div>
+
+            <p class="login-slogan">
+                떡볶이에 빠지는 순간,<br>
+                입덕 시작!
+            </p>
+
+        </section>
+
+
+        <!-- =================================
+             CHARACTER
+        ================================== -->
+        <section class="character-section">
+
+            <!-- 캐릭터 이미지 -->
+            <div class="character-image">
+
+                <!-- 실제 캐릭터 이미지로 교체 -->
+                <img src="images/login-character.png"
+                     alt="입덕볶이 캐릭터">
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             LOGIN BUTTONS
+        ================================== -->
+        <section class="login-buttons">
+
+
+            <!-- 간편 로그인 -->
+            <a href="#"
+               class="login-button easy-login"
+               id="easyLoginButton">
+
+                간편 로그인
+
+            </a>
+
+
+            <!-- 일반 로그인 -->
+            <a href="#"
+               class="login-button normal-login"
+               id="normalLoginButton">
+
+                일반 로그인
+
+            </a>
+
+
+        </section>
+
+
+        <!-- =================================
+             SOCIAL LOGIN
+        ================================== -->
+        <section class="social-login-section">
+
+
+            <!-- 또는 -->
+            <div class="social-divider">
+
+                <span></span>
+
+                <p>또는</p>
+
+                <span></span>
+
+            </div>
+
+
+            <!-- 소셜 로그인 버튼 -->
+            <div class="social-login-list">
+
+
+                <!-- 네이버 -->
+                <a href="#"
+                   class="social-button social-naver"
+                   aria-label="네이버 로그인"
+                   data-provider="네이버">
+
+                    <span class="naver-logo">N</span>
+
+                </a>
+
+
+                <!-- 카카오 -->
+                <a href="#"
+                   class="social-button social-kakao"
+                   aria-label="카카오 로그인"
+                   data-provider="카카오">
+
+                    <svg viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M16 5C8.8 5 3 9.5 3 15C3 18.5 5.3 21.5 8.8 23.2L7.5 28L13.2 24.8C14.1 25 15 25 16 25C23.2 25 29 20.5 29 15C29 9.5 23.2 5 16 5Z"
+                              fill="#3C1E1E"/>
+                    </svg>
+
+                    <span class="kakao-text">TALK</span>
+
+                </a>
+
+
+                <!-- 구글 -->
+                <a href="#"
+                   class="social-button social-google"
+                   aria-label="구글 로그인"
+                   data-provider="구글">
+
+                    <span class="google-logo">G</span>
+
+                </a>
+
+
+                <!-- 애플 -->
+                <a href="#"
+                   class="social-button social-apple"
+                   aria-label="애플 로그인"
+                   data-provider="애플">
+
+                    <svg viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M21.5 16.8C21.5 13.5 24.2 11.9 24.3 11.8C22.8 9.6 20.5 9.3 19.7 9.3C17.7 9.1 15.8 10.5 14.8 10.5C13.8 10.5 12.2 9.3 10.5 9.3C8.3 9.3 6.3 10.6 5.2 12.6C3 16.4 4.7 22.1 6.8 25.2C7.8 26.7 9 28.4 10.7 28.3C12.3 28.2 12.9 27.3 14.8 27.3C16.7 27.3 17.2 28.3 18.9 28.3C20.7 28.3 21.8 26.8 22.9 25.2C24.1 23.5 24.6 21.9 24.6 21.8C24.5 21.8 21.5 20.6 21.5 16.8Z"
+                              fill="currentColor"/>
+                        <path d="M18.4 7.3C19.3 6.2 19.9 4.7 19.7 3.2C18.4 3.3 16.8 4.1 15.9 5.2C15.1 6.1 14.4 7.7 14.6 9.1C16 9.2 17.5 8.4 18.4 7.3Z"
+                              fill="currentColor"/>
+                    </svg>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             SIGN UP
+        ================================== -->
+        <section class="signup-section">
+
+            <p class="signup-text">
+
+                계정이 없으신가요?
+
+                <a href="#"
+                   class="signup-link"
+                   id="signupButton">
+
+                    회원가입
+
+                </a>
+
+            </p>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<!-- =================================
+     JAVASCRIPT
+================================= -->
+<script>
+
+    // -----------------------------
+    // LOGIN BUTTONS
+    // -----------------------------
+
+    const easyLoginButton =
+        document.getElementById('easyLoginButton');
+
+    const normalLoginButton =
+        document.getElementById('normalLoginButton');
+
+
+    easyLoginButton.addEventListener('click', function (event) {
+
+        event.preventDefault();
+
+        alert('간편 로그인 페이지로 이동합니다.');
+
+    });
+
+
+    normalLoginButton.addEventListener('click', function (event) {
+
+        event.preventDefault();
+
+        alert('일반 로그인 페이지로 이동합니다.');
+
+    });
+
+
+    // -----------------------------
+    // SOCIAL LOGIN
+    // -----------------------------
+
+    const socialButtons =
+        document.querySelectorAll('.social-button');
+
+
+    socialButtons.forEach(function (button) {
+
+        button.addEventListener('click', function (event) {
+
+            event.preventDefault();
+
+            const provider =
+                button.dataset.provider;
+
+            alert(provider + ' 로그인 페이지로 이동합니다.');
+
+        });
+
+    });
+
+
+    // -----------------------------
+    // SIGN UP
+    // -----------------------------
+
+    const signupButton =
+        document.getElementById('signupButton');
+
+
+    signupButton.addEventListener('click', function (event) {
+
+        event.preventDefault();
+
+        alert('회원가입 페이지로 이동합니다.');
+
+    });
+
+
+    // -----------------------------
+    // NOTIFICATION
+    // -----------------------------
+
+    const notificationButton =
+        document.getElementById('notificationButton');
+
+
+    notificationButton.addEventListener('click', function () {
+
+        alert('알림');
+
+    });
+
+
+    // -----------------------------
+    // IMAGE FALLBACK
+    // -----------------------------
+
+    const images =
+        document.querySelectorAll('img');
+
+
+    images.forEach(function (img) {
+
+        img.addEventListener('error', function () {
+
+            img.style.display = 'none';
+
+        });
+
+    });
+
+</script>
+
+</body>
+</html>
