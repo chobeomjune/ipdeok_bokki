@@ -16,13 +16,9 @@ html {
 body {
     width: 100%;
     min-height: 100vh;
-
     background-color: #ffffff;
-
     color: #000000;
-
     font-family: 'Noto Sans KR', sans-serif;
-
     -webkit-font-smoothing: antialiased;
 }
 
@@ -37,9 +33,21 @@ button {
     border: none;
 }
 
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
 img {
     display: block;
     max-width: 100%;
+}
+
+button,
+a,
+input {
+    -webkit-tap-highlight-color: transparent;
 }
 
 
@@ -49,15 +57,11 @@ img {
 
 #app {
     position: relative;
-
     width: 100%;
     max-width: 500px;
     min-height: 100vh;
-
     margin: 0 auto;
-
     overflow: hidden;
-
     background-color: #ffffff;
 }
 
@@ -76,7 +80,6 @@ img {
 
     width: 100%;
     height: 48px;
-
     padding: 0 18px;
 
     background-color: #ffffff;
@@ -84,9 +87,48 @@ img {
 
 .logo {
     color: #111111;
-
     font-size: 17px;
     font-weight: 500;
+}
+
+
+/* 헤더 로그인 사용자 영역 */
+
+.header-user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-left: auto;
+    margin-right: 12px;
+
+    color: #777777;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.header-user button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 30px;
+    padding: 0 12px;
+
+    border: 1px solid #dddddd;
+    border-radius: 20px;
+
+    background-color: #ffffff;
+    color: #333333;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    white-space: nowrap;
+}
+
+.header-user button:active {
+    background-color: #f7f7f7;
 }
 
 
@@ -99,7 +141,6 @@ img {
 
     width: 30px;
     height: 30px;
-
     gap: 5px;
 
     background-color: transparent;
@@ -107,12 +148,10 @@ img {
 
 .hamburger-button span {
     display: block;
-
     width: 23px;
     height: 2px;
 
     border-radius: 2px;
-
     background-color: #111111;
 }
 
@@ -124,17 +163,14 @@ img {
 .menu-layer {
     position: fixed;
     inset: 0;
-
     z-index: 100;
 
     visibility: hidden;
-
     pointer-events: none;
 }
 
 .menu-layer.is-open {
     visibility: visible;
-
     pointer-events: auto;
 }
 
@@ -146,7 +182,6 @@ img {
     inset: 0;
 
     background-color: rgba(0, 0, 0, 0.45);
-
     opacity: 0;
 
     transition: opacity 0.3s ease;
@@ -176,7 +211,6 @@ img {
     background-color: #ffffff;
 
     transform: translateX(100%);
-
     transition: transform 0.3s ease;
 
     overflow-y: auto;
@@ -200,7 +234,6 @@ img {
 
 .side-menu-title {
     color: #111111;
-
     font-size: 24px;
     font-weight: 700;
 }
@@ -210,12 +243,10 @@ img {
     height: 32px;
 
     background-color: transparent;
-
     color: #111111;
 
     font-size: 35px;
     font-weight: 300;
-
     line-height: 1;
 }
 
@@ -227,11 +258,9 @@ img {
     flex-direction: column;
 
     width: 100%;
-
     gap: 0;
 
     margin-top: 55px;
-
     list-style: none;
 }
 
@@ -247,7 +276,6 @@ img {
     min-height: 90px;
 
     color: #111111;
-
     font-size: 19px;
     font-weight: 400;
 }
@@ -265,7 +293,138 @@ body.menu-open {
 
 
 /* =========================================
-   05. HERO
+   05. SIDE MENU AUTH
+   로그인 / 비로그인 메뉴
+========================================= */
+
+
+/* 로그인 전 메뉴 */
+
+.guest-menu,
+.auth-guest {
+    display: block;
+}
+
+
+/* 로그인 후 메뉴 */
+
+.user-menu,
+.auth-user {
+    display: none;
+}
+
+
+/* 로그인 상태 */
+
+body.logged-in .guest-menu,
+body.logged-in .auth-guest {
+    display: none;
+}
+
+body.logged-in .user-menu,
+body.logged-in .auth-user {
+    display: block;
+}
+
+
+/* 로그인 사용자 정보 */
+
+.side-menu-user {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    width: 100%;
+    padding: 22px 0;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.side-menu-user-name {
+    color: #111111;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.side-menu-user-description {
+    color: #888888;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+
+/* 로그인 / 회원가입 버튼 */
+
+.side-menu-auth-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: 100%;
+    margin-top: 25px;
+}
+
+.side-menu-auth-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 48px;
+
+    border-radius: 8px;
+
+    background-color: #ff8a24;
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.15s ease;
+}
+
+.side-menu-auth-button.secondary {
+    border: 1px solid #dddddd;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+.side-menu-auth-button:active {
+    transform: scale(0.98);
+}
+
+
+/* 로그아웃 버튼 */
+
+.logout-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 45px;
+
+    margin-top: 25px;
+
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+
+    background-color: #ffffff;
+    color: #777777;
+
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.logout-button:active {
+    background-color: #f7f7f7;
+}
+
+
+/* =========================================
+   06. HERO
 ========================================= */
 
 .hero {
@@ -289,14 +448,12 @@ body.menu-open {
 
 
 /* =========================================
-   06. ORDER SECTION
+   07. ORDER SECTION
 ========================================= */
 
 .order-section {
     width: 100%;
-
     padding: 17px 13px 35px;
-
     background-color: #ffffff;
 }
 
@@ -305,7 +462,6 @@ body.menu-open {
     flex-direction: column;
 
     width: 100%;
-
     gap: 16px;
 }
 
@@ -323,7 +479,6 @@ body.menu-open {
     border-radius: 12px;
 
     background-color: #ffcc00;
-
     color: #ffffff;
 
     font-size: 17px;
@@ -346,14 +501,12 @@ body.menu-open {
 
 .order-button-main {
     height: 69px;
-
     background-color: #ff8a24;
-
     font-size: 18px;
 }
 
 
-/* 버튼 아이콘 */
+/* 배달 아이콘 */
 
 .delivery-icon {
     display: flex;
@@ -362,9 +515,13 @@ body.menu-open {
 
     width: 45px;
     height: 45px;
+
+    flex-shrink: 0;
 }
 
 .delivery-icon svg {
+    display: block;
+
     width: 100%;
     height: 100%;
 }
@@ -374,47 +531,111 @@ body.menu-open {
 
 .order-button-row {
     display: flex;
-
     width: 100%;
-
     gap: 8px;
 }
 
 .order-button-row .order-button {
     flex: 1;
-
     min-width: 0;
 }
 
 
-/* 전화 아이콘 */
+/* =========================================
+   전화 주문 아이콘
+   사진 속 둥근 선 스타일 전화기
+========================================= */
 
 .phone-icon {
-    font-size: 23px;
-    font-weight: 400;
-}
-
-
-/* 쿠폰 아이콘 */
-
-.coupon-icon {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
 
     width: 23px;
-    height: 20px;
+    height: 23px;
 
-    border: 1.5px solid #ffffff;
-    border-radius: 3px;
+    flex-shrink: 0;
+
+    color: #ffffff;
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.phone-icon svg {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: visible;
+}
+
+.phone-icon svg path {
+    stroke: currentColor;
+    stroke-width: 3.2;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* =========================================
+   쿠폰 사용 아이콘
+   사진 속 쿠폰 테두리 + 퍼센트 스타일
+========================================= */
+
+.coupon-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 23px;
+    height: 23px;
+
+    flex-shrink: 0;
+
+    border: none;
+    border-radius: 0;
+
+    background-color: transparent;
+    color: #ffffff;
 
     font-size: 17px;
     font-weight: 400;
 }
 
+.coupon-icon svg {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: visible;
+}
+
+.coupon-icon svg path,
+.coupon-icon svg circle {
+    stroke: currentColor;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* 전화 주문 / 쿠폰 사용 아이콘과 글자 정렬 */
+
+.order-button-row .order-button {
+    gap: 9px;
+}
+
+.order-button-row .order-button > span {
+    display: inline-flex;
+    align-items: center;
+}
+
 
 /* =========================================
-   07. SECTION TITLE
+   08. SECTION TITLE
 ========================================= */
 
 .section-title {
@@ -424,13 +645,12 @@ body.menu-open {
     font-weight: 500;
 
     line-height: 1.4;
-
     text-align: center;
 }
 
 
 /* =========================================
-   08. HASHTAG
+   09. HASHTAG
 ========================================= */
 
 .hashtag-list {
@@ -439,7 +659,6 @@ body.menu-open {
     justify-content: center;
 
     width: 100%;
-
     gap: 10px;
 }
 
@@ -460,7 +679,6 @@ body.menu-open {
     border-radius: 20px;
 
     background-color: transparent;
-
     color: #555555;
 
     font-size: 8px;
@@ -474,15 +692,13 @@ body.menu-open {
 
 .hashtag.active {
     border-color: #ff8a24;
-
     background-color: #ff8a24;
-
     color: #ffffff;
 }
 
 
 /* =========================================
-   09. RECOMMEND SECTION
+   10. RECOMMEND SECTION
 ========================================= */
 
 .recommend-section {
@@ -494,7 +710,6 @@ body.menu-open {
     padding-top: 42px;
 
     background-color: #fff0c2;
-
     overflow: hidden;
 }
 
@@ -527,7 +742,6 @@ body.menu-open {
     align-items: center;
 
     border-radius: 10px;
-
     overflow: hidden;
 }
 
@@ -544,7 +758,6 @@ body.menu-open {
     padding: 20px 10px;
 
     background-color: #ff8a24;
-
     color: #ffffff;
 
     text-align: center;
@@ -561,7 +774,6 @@ body.menu-open {
     height: 245px;
 
     background-color: #ffcc00;
-
     transform: translateY(-50%);
 }
 
@@ -586,7 +798,6 @@ body.menu-open {
 
 .recommend-label {
     color: #ffffff;
-
     font-size: 10px;
     font-weight: 400;
 }
@@ -595,7 +806,6 @@ body.menu-open {
     margin-top: 5px;
 
     color: #ffffff;
-
     font-size: 13px;
     font-weight: 500;
 }
@@ -634,27 +844,23 @@ body.menu-open {
     height: 145px;
 
     margin-top: 15px;
-
     overflow: hidden;
 }
 
 .recommend-image-placeholder img {
     width: 100%;
     height: 100%;
-
     object-fit: contain;
 }
 
 
 /* =========================================
-   10. MENU SECTION
+   11. MENU SECTION
 ========================================= */
 
 .menu-section {
     width: 100%;
-
     padding: 42px 13px 50px;
-
     background-color: #ffffff;
 }
 
@@ -667,13 +873,11 @@ body.menu-open {
 
 .menu-grid {
     display: grid;
-
     grid-template-columns: repeat(2, minmax(0, 1fr));
 
     gap: 20px 10px;
 
     width: 100%;
-
     margin-top: 34px;
 }
 
@@ -682,9 +886,7 @@ body.menu-open {
 
 .menu-item {
     display: block;
-
     width: 100%;
-
     min-width: 0;
 }
 
@@ -696,7 +898,6 @@ body.menu-open {
     aspect-ratio: 1 / 1;
 
     border-radius: 10px;
-
     background-color: #858585;
 
     overflow: hidden;
@@ -705,7 +906,6 @@ body.menu-open {
 .menu-image-placeholder img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
 }
 
@@ -716,7 +916,6 @@ body.menu-open {
     margin-top: 5px;
 
     color: #000000;
-
     font-size: 14px;
     font-weight: 500;
 
@@ -725,14 +924,12 @@ body.menu-open {
 
 
 /* =========================================
-   11. EVENT SECTION
+   12. EVENT SECTION
 ========================================= */
 
 .event-section {
     width: 100%;
-
     padding-bottom: 40px;
-
     background-color: #ffffff;
 }
 
@@ -741,9 +938,7 @@ body.menu-open {
 
 .event-heading {
     width: 100%;
-
     padding: 25px 15px 20px;
-
     text-align: center;
 }
 
@@ -751,7 +946,6 @@ body.menu-open {
     margin-top: 9px;
 
     color: #838383;
-
     font-size: 12px;
     font-weight: 400;
 }
@@ -772,11 +966,9 @@ body.menu-open {
 
 .event-tab {
     flex: 1;
-
     height: 100%;
 
     background-color: #ffffff;
-
     color: #555555;
 
     font-size: 12px;
@@ -785,7 +977,6 @@ body.menu-open {
 
 .event-tab.active {
     color: #000000;
-
     font-weight: 700;
 }
 
@@ -794,7 +985,6 @@ body.menu-open {
 
 .event-list {
     width: 100%;
-
     padding: 30px 13px 0;
 }
 
@@ -810,7 +1000,6 @@ body.menu-open {
     border-radius: 12px;
 
     background-color: #ffffff;
-
     overflow: hidden;
 }
 
@@ -822,14 +1011,12 @@ body.menu-open {
     height: 160px;
 
     background-color: #999999;
-
     overflow: hidden;
 }
 
 .event-image-placeholder img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
 }
 
@@ -842,7 +1029,6 @@ body.menu-open {
 
 .event-subtitle {
     color: #555555;
-
     font-size: 11px;
     font-weight: 400;
 }
@@ -851,7 +1037,6 @@ body.menu-open {
     margin-top: 4px;
 
     color: #000000;
-
     font-size: 13px;
     font-weight: 500;
 
@@ -862,14 +1047,13 @@ body.menu-open {
     margin-top: 22px;
 
     color: #838383;
-
     font-size: 11px;
     font-weight: 300;
 }
 
 
 /* =========================================
-   12. BOTTOM NAVIGATION
+   13. BOTTOM NAVIGATION
 ========================================= */
 
 .bottom-navigation {
@@ -886,7 +1070,6 @@ body.menu-open {
     height: 58px;
 
     border-top: 1px solid #eeeeee;
-
     background-color: #ffffff;
 }
 
@@ -900,13 +1083,11 @@ body.menu-open {
     justify-content: center;
 
     flex: 1;
-
     height: 100%;
 
     gap: 3px;
 
     color: #777777;
-
     font-size: 10px;
     font-weight: 400;
 }
@@ -930,40 +1111,800 @@ body.menu-open {
 
 .bottom-nav-item.active {
     color: #e9282d;
-
     font-weight: 500;
 }
 
 
 /* =========================================
-   13. RESPONSIVE
+   14. AUTH UI
+   로그인 / 회원가입
+========================================= */
+
+
+/* 인증 페이지 공통 */
+
+.auth-page {
+    width: 100%;
+    min-height: calc(100vh - 48px);
+
+    padding: 35px 20px 80px;
+
+    background-color: #ffffff;
+}
+
+
+/* 인증 페이지 제목 */
+
+.auth-title {
+    color: #111111;
+
+    font-size: 28px;
+    font-weight: 700;
+
+    text-align: center;
+}
+
+.auth-description {
+    margin-top: 10px;
+
+    color: #888888;
+
+    font-size: 13px;
+    font-weight: 400;
+
+    line-height: 1.6;
+    text-align: center;
+}
+
+
+/* 로그인 / 회원가입 폼 */
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    gap: 18px;
+
+    margin-top: 35px;
+}
+
+
+/* 입력 그룹 */
+
+.auth-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    width: 100%;
+}
+
+.auth-label {
+    color: #333333;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+/* 입력창 */
+
+.auth-input {
+    width: 100%;
+    height: 50px;
+
+    padding: 0 14px;
+
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+
+    background-color: #ffffff;
+    color: #111111;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.auth-input::placeholder {
+    color: #aaaaaa;
+}
+
+.auth-input:focus {
+    border-color: #ff8a24;
+    box-shadow: 0 0 0 3px rgba(255, 138, 36, 0.12);
+}
+
+
+/* 입력 오류 */
+
+.auth-input.error {
+    border-color: #e9282d;
+}
+
+.auth-error {
+    display: none;
+
+    color: #e9282d;
+
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.auth-error.show {
+    display: block;
+}
+
+
+/* 입력 성공 */
+
+.auth-success {
+    display: none;
+
+    color: #2b9b5b;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.auth-success.show {
+    display: block;
+}
+
+
+/* 인증 주요 버튼 */
+
+.auth-submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 52px;
+
+    margin-top: 8px;
+
+    border-radius: 8px;
+
+    background-color: #ff8a24;
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.15s ease;
+}
+
+.auth-submit-button:hover {
+    background-color: #f47713;
+}
+
+.auth-submit-button:active {
+    transform: scale(0.98);
+}
+
+
+/* 인증 페이지 하단 링크 */
+
+.auth-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 25px;
+
+    color: #777777;
+    font-size: 12px;
+}
+
+.auth-footer-link {
+    color: #ff8a24;
+    font-weight: 700;
+}
+
+
+/* 로그인 상태 유지 / 체크박스 */
+
+.auth-checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #777777;
+    font-size: 12px;
+}
+
+.auth-checkbox {
+    width: 15px;
+    height: 15px;
+
+    accent-color: #ff8a24;
+}
+
+
+/* =========================================
+   15. LOGIN USER UI
+========================================= */
+
+
+/* 로그인 상태 사용자 인사 */
+
+.user-greeting {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    color: #111111;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.user-greeting strong {
+    color: #ff8a24;
+    font-weight: 700;
+}
+
+
+/* 로그인 전 사용자 안내 */
+
+.guest-greeting {
+    color: #777777;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* 마이페이지 사용자 카드 */
+
+.user-info-card {
+    width: 100%;
+    padding: 22px 18px;
+
+    border-radius: 12px;
+    background-color: #fff5e9;
+}
+
+.user-info-name {
+    color: #111111;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.user-info-email {
+    margin-top: 6px;
+
+    color: #888888;
+    font-size: 12px;
+}
+
+
+/* 로그인 사용자 전용 콘텐츠 */
+
+.login-required {
+    display: none;
+}
+
+body.logged-in .login-required {
+    display: block;
+}
+
+
+/* 비로그인 사용자 전용 콘텐츠 */
+
+.guest-only {
+    display: block;
+}
+
+body.logged-in .guest-only {
+    display: none;
+}
+
+
+/* =========================================
+   16. LOGIN REQUIRED POPUP
+========================================= */
+
+
+/* 팝업 배경 */
+
+.auth-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+.auth-modal.is-open {
+    display: flex;
+}
+
+
+/* 팝업 내용 */
+
+.auth-modal-content {
+    width: 100%;
+    max-width: 360px;
+
+    padding: 28px 22px;
+
+    border-radius: 16px;
+
+    background-color: #ffffff;
+
+    text-align: center;
+
+    animation: authModalShow 0.25s ease;
+}
+
+.auth-modal-title {
+    color: #111111;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.auth-modal-description {
+    margin-top: 12px;
+
+    color: #777777;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* 팝업 버튼 */
+
+.auth-modal-buttons {
+    display: flex;
+    gap: 8px;
+
+    width: 100%;
+    margin-top: 25px;
+}
+
+.auth-modal-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 1;
+    height: 45px;
+
+    border-radius: 8px;
+
+    background-color: #ff8a24;
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.auth-modal-button.secondary {
+    border: 1px solid #dddddd;
+    background-color: #ffffff;
+    color: #555555;
+}
+
+
+/* 팝업 애니메이션 */
+
+@keyframes authModalShow {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   16-1. INDEX HTML AUTH MODAL
+   바로 위 index.html 구조에 맞춤
+========================================= */
+
+
+/* 모달 기본 상태 */
+
+#authModal.auth-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background-color: transparent;
+}
+
+#authModal.auth-modal.is-open {
+    display: flex;
+}
+
+
+/* 모달 배경 */
+
+.auth-modal-overlay {
+    position: absolute;
+    inset: 0;
+
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+
+/* 모달 카드 */
+
+#authModal .auth-modal-content {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 360px;
+
+    padding: 28px 22px;
+
+    border-radius: 20px;
+
+    background-color: #ffffff;
+
+    text-align: left;
+
+    animation: authModalShow 0.25s ease;
+}
+
+
+/* 모달 닫기 버튼 */
+
+.auth-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    background-color: transparent;
+    color: #111111;
+
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+
+/* 모달 제목 */
+
+#authModal #authTitle {
+    margin: 0;
+
+    color: #e5232c;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    text-align: center;
+}
+
+
+/* 모달 설명 */
+
+#authModal .auth-description {
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    color: #888888;
+
+    font-size: 12px;
+    line-height: 1.6;
+
+    text-align: center;
+}
+
+
+/* 로그인 / 회원가입 탭 */
+
+.auth-tabs {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    margin-bottom: 20px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.auth-tab {
+    flex: 1;
+
+    height: 42px;
+
+    border: none;
+    border-bottom: 2px solid transparent;
+
+    background-color: transparent;
+    color: #888888;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.auth-tab.active {
+    border-bottom-color: #e5232c;
+
+    color: #e5232c;
+    font-weight: 700;
+}
+
+
+/* 입력 그룹 */
+
+#authModal .auth-field {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    gap: 7px;
+
+    margin-bottom: 14px;
+}
+
+#authModal .auth-field[hidden] {
+    display: none !important;
+}
+
+
+/* 입력 라벨 */
+
+#authModal .auth-field label {
+    display: block;
+
+    color: #333333;
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+/* 입력창 */
+
+#authModal .auth-field input {
+    display: block;
+
+    width: 100%;
+    height: 44px;
+
+    padding: 0 12px;
+
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+
+    background-color: #ffffff;
+    color: #111111;
+
+    font-size: 13px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#authModal .auth-field input::placeholder {
+    color: #aaaaaa;
+}
+
+#authModal .auth-field input:focus {
+    border-color: #ff8a24;
+    box-shadow: 0 0 0 3px rgba(255, 138, 36, 0.12);
+}
+
+
+/* 인증 메시지 */
+
+#authModal .auth-message {
+    min-height: 18px;
+
+    margin: 0 0 8px;
+
+    color: #e5232c;
+
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/* 모달 제출 버튼 */
+
+#authModal .auth-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 46px;
+
+    border: none;
+    border-radius: 24px;
+
+    background-color: #e5232c;
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.15s ease;
+}
+
+#authModal .auth-submit:hover {
+    background-color: #d91f28;
+}
+
+#authModal .auth-submit:active {
+    transform: scale(0.98);
+}
+
+
+/* 모달 안내 문구 */
+
+#authModal .auth-notice {
+    margin-top: 16px;
+
+    color: #999999;
+
+    font-size: 10px;
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+
+/* 모달 열렸을 때 스크롤 방지 */
+
+body.auth-open {
+    overflow: hidden;
+}
+
+
+/* =========================================
+   17. LOGIN STATE BUTTON
+========================================= */
+
+
+/* 로그인 상태에 따라 버튼 표시 */
+
+.login-button {
+    display: flex;
+}
+
+.signup-button {
+    display: flex;
+}
+
+body.logged-in .login-button,
+body.logged-in .signup-button {
+    display: none;
+}
+
+body.logged-in .logout-button {
+    display: flex;
+}
+
+
+/* 로그인 사용자 주문 버튼 */
+
+.order-button.logged-in {
+    background-color: #ff8a24;
+}
+
+
+/* 로그인 유도 버튼 */
+
+.login-required-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 48px;
+
+    border-radius: 8px;
+
+    background-color: #ff8a24;
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+/* =========================================
+   18. ACCESSIBILITY
+========================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 2px solid #ff8a24;
+    outline-offset: 3px;
+}
+
+
+/* SVG 아이콘은 버튼의 포커스 테두리와 겹치지 않도록 */
+
+.phone-icon svg,
+.coupon-icon svg,
+.delivery-icon svg {
+    pointer-events: none;
+}
+
+
+/* =========================================
+   19. RESPONSIVE
 ========================================= */
 
 @media (min-width: 501px) {
-
     #app {
         width: 500px;
     }
-
 }
 
 
 /* 작은 화면 */
 
 @media (max-width: 350px) {
-
     .hero-image {
         height: 260px;
     }
 
     .order-button {
         height: 62px;
-
         font-size: 15px;
     }
 
     .order-button-main {
         height: 65px;
+    }
+
+    .phone-icon,
+    .coupon-icon {
+        width: 21px;
+        height: 21px;
+    }
+
+    .order-button-row .order-button {
+        gap: 7px;
     }
 
     .recommend-card-main {
@@ -979,4 +1920,101 @@ body.menu-open {
         gap: 18px 8px;
     }
 
+    .section-title {
+        font-size: 26px;
+    }
+
+    .auth-page {
+        padding: 30px 15px 70px;
+    }
+
+    .auth-title {
+        font-size: 25px;
+    }
+
+    .auth-modal-content {
+        padding: 25px 18px;
+    }
+
+    #authModal .auth-modal-content {
+        padding: 25px 18px;
+    }
+
+    .header-user {
+        gap: 5px;
+        margin-right: 8px;
+        font-size: 10px;
+    }
+
+    .header-user button {
+        padding: 0 9px;
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================
+   20. FINAL ICON STYLE
+   전화 주문 / 쿠폰 사용 아이콘 통일
+========================================= */
+
+/* 아이콘과 글자의 수직 중앙 정렬 */
+
+.order-button-row .order-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* 전화기 아이콘 SVG */
+
+.phone-icon svg {
+    width: 23px;
+    height: 23px;
+}
+
+.phone-icon svg path {
+    fill: none;
+    stroke: #ffffff;
+}
+
+
+/* 쿠폰 아이콘 SVG */
+
+.coupon-icon svg {
+    width: 23px;
+    height: 23px;
+}
+
+.coupon-icon svg path,
+.coupon-icon svg circle {
+    fill: none;
+    stroke: #ffffff;
+}
+
+
+/* 아이콘의 선 끝과 모서리 스타일 */
+
+.phone-icon svg path,
+.coupon-icon svg path,
+.coupon-icon svg circle {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* 아이콘이 글자보다 지나치게 커지지 않도록 */
+
+.phone-icon,
+.coupon-icon {
+    flex: 0 0 23px;
+}
+
+
+/* 전화 주문 / 쿠폰 사용 글자 */
+
+.order-button-row .order-button > span:last-child {
+    line-height: 1.4;
+    white-space: nowrap;
 }
